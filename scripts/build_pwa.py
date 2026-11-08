@@ -451,3 +451,4 @@ with open(os.path.join(PWA_DIR, "index.html"), "w") as f:
     f.write(html)
 
 print("PWA generated successfully with 30 items, Service Worker, and Manifest!")
+
