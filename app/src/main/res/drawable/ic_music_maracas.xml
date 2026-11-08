@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Left Maraca -->
+    <path android:fillColor="#FF7043" android:pathData="M36,18 C26,18 20,30 28,42 C32,48 38,54 36,64 L30,82 L38,84 L44,66 C48,58 54,46 50,34 C48,22 42,18 36,18 Z" />
+    <path android:fillColor="#FFEE58" android:pathData="M26,34 L48,34 L46,40 L28,40 Z" />
+    <!-- Right Maraca -->
+    <path android:fillColor="#42A5F5" android:pathData="M64,18 C54,18 48,30 56,42 C60,48 66,54 64,64 L58,82 L66,84 L72,66 C76,58 82,46 78,34 C76,22 70,18 64,18 Z" />
+    <path android:fillColor="#FFCA28" android:pathData="M54,34 L76,34 L74,40 L56,40 Z" />
+
+</vector>

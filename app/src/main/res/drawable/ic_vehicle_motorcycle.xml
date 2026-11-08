@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Frame & Body -->
+    <path android:fillColor="#00ACC1" android:pathData="M32,46 L48,36 L66,36 L74,52 L56,58 L42,54 Z" />
+    <!-- Handlebar & Headlight -->
+    <path android:fillColor="#00000000" android:strokeColor="#37474F" android:strokeWidth="4" android:strokeLineCap="round"
+          android:pathData="M66,36 L72,24 L64,22" />
+    <path android:fillColor="#FFEE58" android:pathData="M76,32 A4,4 0 1,0 76,24 A4,4 0 1,0 76,32 Z" />
+    <!-- Seat -->
+    <path android:fillColor="#212121" android:pathData="M44,36 C42,34 54,34 56,36 L54,42 L42,42 Z" />
+    <!-- Front Wheel -->
+    <path android:fillColor="#37474F" android:pathData="M76,78 A12,12 0 1,0 76,54 A12,12 0 1,0 76,78 Z" />
+    <path android:fillColor="#ECEFF1" android:pathData="M76,71 A5,5 0 1,0 76,61 A5,5 0 1,0 76,71 Z" />
+    <!-- Rear Wheel -->
+    <path android:fillColor="#37474F" android:pathData="M26,78 A12,12 0 1,0 26,54 A12,12 0 1,0 26,78 Z" />
+    <path android:fillColor="#ECEFF1" android:pathData="M26,71 A5,5 0 1,0 26,61 A5,5 0 1,0 26,71 Z" />
+
+</vector>

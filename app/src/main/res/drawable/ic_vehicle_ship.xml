@@ -1,0 +1,20 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Hull Boat -->
+    <path android:fillColor="#C62828" android:pathData="M14,54 L86,54 L76,74 L24,74 Z" />
+    <!-- Cabin Deck -->
+    <path android:fillColor="#ECEFF1" android:pathData="M30,38 L68,38 L68,54 L30,54 Z" />
+    <!-- Portholes Windows -->
+    <path android:fillColor="#0288D1" android:pathData="M38,46 A3,3 0 1,0 38,40 A3,3 0 1,0 38,46 Z" />
+    <path android:fillColor="#0288D1" android:pathData="M50,46 A3,3 0 1,0 50,40 A3,3 0 1,0 50,46 Z" />
+    <path android:fillColor="#0288D1" android:pathData="M62,46 A3,3 0 1,0 62,40 A3,3 0 1,0 62,46 Z" />
+    <!-- Chimney & Smoke -->
+    <path android:fillColor="#FBC02D" android:pathData="M44,26 L54,26 L54,38 L44,38 Z" />
+    <!-- Blue Ocean Waves -->
+    <path android:fillColor="#29B6F6" android:pathData="M10,74 Q25,68 40,74 Q55,80 70,74 Q85,68 95,74 L95,84 L10,84 Z" />
+
+</vector>

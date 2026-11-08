@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Drum Shell -->
+    <path android:fillColor="#E53935" android:pathData="M20,40 L80,40 L80,72 C80,82 20,82 20,72 Z" />
+    <!-- Drum Top -->
+    <path android:fillColor="#ECEFF1" android:pathData="M50,28 C70,28 80,34 80,40 C80,46 70,52 50,52 C30,52 20,46 20,40 C20,34 30,28 50,28 Z" />
+    <!-- Drumsticks -->
+    <path android:fillColor="#00000000" android:strokeColor="#FFA726" android:strokeWidth="3.5" android:strokeLineCap="round"
+          android:pathData="M16,16 L44,36 M84,16 L56,36" />
+    <!-- Shell Pattern -->
+    <path android:fillColor="#00000000" android:strokeColor="#FFFFFF" android:strokeWidth="2.5"
+          android:pathData="M24,46 L36,74 L48,46 L60,74 L72,46" />
+
+</vector>

@@ -1,0 +1,21 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Bus Body -->
+    <path android:fillColor="#FDD835" android:pathData="M16,30 C16,24 22,20 28,20 L72,20 C78,20 84,24 84,30 L84,68 C84,72 80,74 76,74 L24,74 C20,74 16,72 16,68 Z" />
+    <!-- Windows -->
+    <path android:fillColor="#81D4FA" android:pathData="M22,28 L38,28 L38,44 L22,44 Z" />
+    <path android:fillColor="#81D4FA" android:pathData="M42,28 L58,28 L58,44 L42,44 Z" />
+    <path android:fillColor="#81D4FA" android:pathData="M62,28 L78,28 L78,44 L62,44 Z" />
+    <!-- Stripe -->
+    <path android:fillColor="#FB8C00" android:pathData="M16,50 L84,50 L84,56 L16,56 Z" />
+    <!-- Wheels -->
+    <path android:fillColor="#37474F" android:pathData="M30,84 A9,9 0 1,0 30,66 A9,9 0 1,0 30,84 Z" />
+    <path android:fillColor="#CFD8DC" android:pathData="M30,78 A3,3 0 1,0 30,72 A3,3 0 1,0 30,78 Z" />
+    <path android:fillColor="#37474F" android:pathData="M70,84 A9,9 0 1,0 70,66 A9,9 0 1,0 70,84 Z" />
+    <path android:fillColor="#CFD8DC" android:pathData="M70,78 A3,3 0 1,0 70,72 A3,3 0 1,0 70,78 Z" />
+
+</vector>

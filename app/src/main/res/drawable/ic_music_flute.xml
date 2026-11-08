@@ -1,0 +1,17 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Silver Tube -->
+    <path android:fillColor="#CFD8DC" android:pathData="M14,46 L86,46 L86,54 L14,54 Z" />
+    <path android:fillColor="#B0BEC5" android:pathData="M84,44 L88,44 L88,56 L84,56 Z" />
+    <!-- Tone Holes -->
+    <path android:fillColor="#37474F" android:pathData="M26,50 A2,2 0 1,0 26,46 A2,2 0 1,0 26,50 Z" />
+    <path android:fillColor="#37474F" android:pathData="M36,50 A2,2 0 1,0 36,46 A2,2 0 1,0 36,50 Z" />
+    <path android:fillColor="#37474F" android:pathData="M46,50 A2,2 0 1,0 46,46 A2,2 0 1,0 46,50 Z" />
+    <path android:fillColor="#37474F" android:pathData="M56,50 A2,2 0 1,0 56,46 A2,2 0 1,0 56,50 Z" />
+    <path android:fillColor="#37474F" android:pathData="M66,50 A2,2 0 1,0 66,46 A2,2 0 1,0 66,50 Z" />
+
+</vector>

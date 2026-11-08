@@ -1,0 +1,23 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Head -->
+    <path android:fillColor="#ECEFF1" android:pathData="M50,18 C32,18 24,30 24,52 C24,72 34,84 50,84 C66,84 76,72 76,52 C76,30 68,18 50,18 Z" />
+    <!-- Black Spots -->
+    <path android:fillColor="#37474F" android:pathData="M24,36 C24,46 36,42 34,30 C32,24 24,28 24,36 Z" />
+    <path android:fillColor="#37474F" android:pathData="M70,48 C64,48 62,58 72,62 C76,58 76,52 70,48 Z" />
+    <!-- Horns -->
+    <path android:fillColor="#FFE082" android:pathData="M28,24 Q18,12 26,10 Q32,16 34,22 Z" />
+    <path android:fillColor="#FFE082" android:pathData="M72,24 Q82,12 74,10 Q68,16 66,22 Z" />
+    <!-- Big Pink Snout -->
+    <path android:fillColor="#F8BBD0" android:pathData="M50,54 C34,54 30,64 30,72 C30,82 40,86 50,86 C60,86 70,82 70,72 C70,64 66,54 50,54 Z" />
+    <path android:fillColor="#880E4F" android:pathData="M42,72 A3,3 0 1,0 42,66 A3,3 0 1,0 42,72 Z" />
+    <path android:fillColor="#880E4F" android:pathData="M58,72 A3,3 0 1,0 58,66 A3,3 0 1,0 58,72 Z" />
+    <!-- Eyes -->
+    <path android:fillColor="#263238" android:pathData="M38,42 A4,4 0 1,0 38,34 A4,4 0 1,0 38,42 Z" />
+    <path android:fillColor="#263238" android:pathData="M62,42 A4,4 0 1,0 62,34 A4,4 0 1,0 62,42 Z" />
+
+</vector>

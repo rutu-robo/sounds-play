@@ -1,0 +1,16 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Golden Bell & Tubing -->
+    <path android:fillColor="#FFD54F" android:pathData="M84,26 C86,22 88,38 88,50 C88,62 86,78 84,74 L68,54 L14,54 L14,46 L68,46 Z" />
+    <!-- Loop Tubing -->
+    <path android:fillColor="#00000000" android:strokeColor="#FFC107" android:strokeWidth="3"
+          android:pathData="M30,46 L30,36 L54,36 L54,46" />
+    <!-- Valves -->
+    <path android:fillColor="#FFA000" android:pathData="M38,30 L42,30 L42,46 L38,46 Z" />
+    <path android:fillColor="#FFA000" android:pathData="M46,30 L50,30 L50,46 L46,46 Z" />
+
+</vector>

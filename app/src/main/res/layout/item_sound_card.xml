@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardCornerRadius="22dp"
+    app:cardElevation="3dp"
+    app:strokeColor="#1A000000"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:id="@+id/layoutCardContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Cute Illustration Image -->
+        <ImageView
+            android:id="@+id/imgSound"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitCenter"
+            tools:src="@drawable/ic_animal_cat" />
+
+        <!-- Bold Kids Title -->
+        <TextView
+            android:id="@+id/tvSoundName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp"
+            tools:text="KUCING" />
+
+        <!-- Large Play Button -->
+        <FrameLayout
+            android:id="@+id/btnPlay"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:background="@drawable/bg_play_button"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_play_arrow"
+                app:tint="@color/white" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
+

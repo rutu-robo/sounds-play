@@ -1,0 +1,16 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Violin Body -->
+    <path android:fillColor="#8D6E63" android:pathData="M38,36 C34,42 42,48 40,54 C38,60 30,64 34,74 C38,82 54,84 60,74 C64,66 56,60 54,54 C52,48 60,42 56,36 C52,30 42,30 38,36 Z" />
+    <!-- Neck & Scroll -->
+    <path android:fillColor="#5D4037" android:pathData="M45,32 L49,32 L49,12 L45,12 Z" />
+    <path android:fillColor="#3E2723" android:pathData="M44,12 A3,3 0 1,0 44,6 A3,3 0 1,0 44,12 Z" />
+    <!-- Bow -->
+    <path android:fillColor="#00000000" android:strokeColor="#FFA726" android:strokeWidth="2.5" android:strokeLineCap="round"
+          android:pathData="M24,24 L74,78" />
+
+</vector>

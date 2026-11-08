@@ -1,0 +1,16 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Guitar Body -->
+    <path android:fillColor="#D84315" android:pathData="M32,54 C24,58 24,74 34,82 C44,90 58,88 64,78 C70,70 66,60 56,58 C52,56 50,50 56,44 C62,38 58,30 50,30 C40,30 38,42 42,46 C46,50 40,52 32,54 Z" />
+    <!-- Sound hole -->
+    <path android:fillColor="#212121" android:pathData="M48,64 A6,6 0 1,0 48,52 A6,6 0 1,0 48,64 Z" />
+    <!-- Neck -->
+    <path android:fillColor="#FFB74D" android:pathData="M48,34 L56,34 L78,12 L70,12 Z" />
+    <!-- Headstock -->
+    <path android:fillColor="#8D6E63" android:pathData="M76,14 L86,4 L80,2 L70,12 Z" />
+
+</vector>

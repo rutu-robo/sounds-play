@@ -1,0 +1,23 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Cabin -->
+    <path android:fillColor="#1E88E5" android:pathData="M18,34 L40,34 L40,70 L18,70 Z" />
+    <!-- Roof -->
+    <path android:fillColor="#D32F2F" android:pathData="M14,30 C14,28 20,26 28,26 L42,26 L40,34 L16,34 Z" />
+    <!-- Boiler -->
+    <path android:fillColor="#43A047" android:pathData="M40,42 L80,42 L80,70 L40,70 Z" />
+    <!-- Chimney & Steam -->
+    <path android:fillColor="#FB8C00" android:pathData="M66,28 L76,28 L74,42 L68,42 Z" />
+    <path android:fillColor="#ECEFF1" android:pathData="M70,18 A5,5 0 1,0 70,8 A5,5 0 1,0 70,18 Z" />
+    <!-- Window -->
+    <path android:fillColor="#B3E5FC" android:pathData="M24,40 L34,40 L34,54 L24,54 Z" />
+    <!-- Wheels -->
+    <path android:fillColor="#37474F" android:pathData="M28,82 A8,8 0 1,0 28,66 A8,8 0 1,0 28,82 Z" />
+    <path android:fillColor="#37474F" android:pathData="M50,82 A8,8 0 1,0 50,66 A8,8 0 1,0 50,82 Z" />
+    <path android:fillColor="#37474F" android:pathData="M72,82 A8,8 0 1,0 72,66 A8,8 0 1,0 72,82 Z" />
+
+</vector>

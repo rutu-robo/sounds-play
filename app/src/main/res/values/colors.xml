@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand / Kids Themes -->
+    <color name="primary">#FF6B6B</color>
+    <color name="primary_variant">#E65252</color>
+    <color name="secondary">#4D96FF</color>
+    <color name="background">#FFFDF6</color>
+    <color name="surface">#FFFFFF</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#2D3436</color>
+    <color name="text_secondary">#636E72</color>
+    <color name="white">#FFFFFF</color>
+    
+    <!-- Category Tab Colors -->
+    <color name="tab_animal_active">#FF9800</color>
+    <color name="tab_animal_light">#FFF3E0</color>
+    <color name="tab_vehicle_active">#03A9F4</color>
+    <color name="tab_vehicle_light">#E1F5FE</color>
+    <color name="tab_music_active">#9C27B0</color>
+    <color name="tab_music_light">#F3E5F5</color>
+    <color name="tab_inactive">#DFE6E9</color>
+    <color name="tab_inactive_text">#747D8C</color>
+
+    <!-- Card Background Pastels -->
+    <color name="card_bg_yellow">#FFF9C4</color>
+    <color name="card_bg_orange">#FFE0B2</color>
+    <color name="card_bg_pink">#F8BBD0</color>
+    <color name="card_bg_blue">#BBDEFB</color>
+    <color name="card_bg_cyan">#B2EBF2</color>
+    <color name="card_bg_green">#C8E6C9</color>
+    <color name="card_bg_purple">#E1BEE7</color>
+    <color name="card_bg_red">#FFCDD2</color>
+    
+    <!-- Button Play Colors -->
+    <color name="play_btn_bg">#2ED573</color>
+    <color name="play_btn_icon">#FFFFFF</color>
+</resources>
+

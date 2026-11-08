@@ -1,0 +1,19 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Head & Neck -->
+    <path android:fillColor="#A1887F" android:pathData="M40,16 L32,32 L26,56 C24,68 30,76 42,76 L62,76 C64,64 68,52 72,40 L62,16 Z" />
+    <!-- Snout -->
+    <path android:fillColor="#8D6E63" android:pathData="M26,58 C24,68 30,78 44,78 L54,78 C52,66 48,58 40,58 Z" />
+    <!-- Ears -->
+    <path android:fillColor="#8D6E63" android:pathData="M38,18 L34,6 L44,14 Z" />
+    <path android:fillColor="#8D6E63" android:pathData="M60,18 L66,6 L56,14 Z" />
+    <!-- Mane -->
+    <path android:fillColor="#4E342E" android:pathData="M62,14 C66,24 74,32 76,50 L68,52 C64,36 58,26 56,14 Z" />
+    <!-- Eye -->
+    <path android:fillColor="#212121" android:pathData="M44,40 A4,4 0 1,0 44,32 A4,4 0 1,0 44,40 Z" />
+
+</vector>

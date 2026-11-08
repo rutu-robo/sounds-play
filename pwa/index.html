@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#FF6B6B">
+    <title>Sound Play - Belajar Bunyi untuk Balita</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icons/icon-192.svg">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #FFFDF6;
+            color: #2D3436;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+        .app {
+            width: 100%;
+            max-width: 460px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: #FFFDF6;
+            box-shadow: 0 0 25px rgba(0,0,0,0.06);
+        }
+        /* Header */
+        .header {
+            padding: 16px 18px 12px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .logo-circle {
+            width: 46px;
+            height: 46px;
+            background: #FF6B6B;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(255, 107, 107, 0.35);
+        }
+        .header-title {
+            font-size: 24px;
+            font-weight: 900;
+            color: #FF6B6B;
+            line-height: 1.1;
+        }
+        .header-subtitle {
+            font-size: 13px;
+            color: #636E72;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+        /* 3 Posisi Tabs */
+        .tabs {
+            display: flex;
+            gap: 8px;
+            padding: 4px 14px 12px;
+        }
+        .tab-btn {
+            flex: 1;
+            padding: 12px 6px;
+            border-radius: 24px;
+            background: #DFE6E9;
+            color: #747D8C;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .tab-btn.active-animal {
+            background: #FF9800;
+            color: #FFFFFF;
+            box-shadow: 0 4px 12px rgba(255, 152, 0, 0.35);
+        }
+        .tab-btn.active-vehicle {
+            background: #03A9F4;
+            color: #FFFFFF;
+            box-shadow: 0 4px 12px rgba(3, 169, 244, 0.35);
+        }
+        .tab-btn.active-music {
+            background: #9C27B0;
+            color: #FFFFFF;
+            box-shadow: 0 4px 12px rgba(156, 39, 176, 0.35);
+        }
+        /* Grid Kartu */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            padding: 6px 14px 30px;
+            overflow-y: auto;
+        }
+        .card {
+            border-radius: 22px;
+            padding: 16px 12px 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.06);
+            cursor: pointer;
+            transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.4);
+        }
+        .card:active, .card.bounce {
+            transform: scale(0.92);
+        }
+        .card-img {
+            width: 105px;
+            height: 105px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+        .card-name {
+            font-size: 19px;
+            font-weight: 900;
+            color: #2D3436;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+        .play-btn {
+            width: 52px;
+            height: 52px;
+            background: #2ED573;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(46, 213, 115, 0.38);
+        }
+        .play-btn svg {
+            width: 26px;
+            height: 26px;
+            fill: #FFFFFF;
+            margin-left: 3px;
+        }
+        /* Offline Pill Badge */
+        .badge-offline {
+            margin-left: auto;
+            background: #E8F5E9;
+            color: #2E7D32;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 4px 8px;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-circle">🎈</div>
+            <div>
+                <div class="header-title">Sound Play</div>
+                <div class="header-subtitle">Sentuh untuk mendengar suara!</div>
+            </div>
+            <div class="badge-offline">100% OFFLINE</div>
+        </div>
+
+        <!-- 3 Posisi Tab Kategori -->
+        <div class="tabs">
+            <button class="tab-btn active-animal" onclick="switchCategory('animal')">
+                <span>🐾</span> <span>Hewan</span>
+            </button>
+            <button class="tab-btn" onclick="switchCategory('vehicle')">
+                <span>🚗</span> <span>Kendaraan</span>
+            </button>
+            <button class="tab-btn" onclick="switchCategory('music')">
+                <span>🎵</span> <span>Musik</span>
+            </button>
+        </div>
+
+        <!-- Grid 10 Item per Kategori -->
+        <div class="cards-grid" id="cardsGrid"></div>
+    </div>
+
+    <script>
+        const categoryData = [{"id": "animal", "title": "Hewan", "icon": "\ud83d\udc3e", "color": "#FF9800", "items": [{"name": "KUCING", "audio": "sounds/animal_cat.wav", "xml": "ic_animal_cat.xml", "bg": "#FFE0B2", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M50,22 C30,22 18,36 18,56 C18,74 32,88 50,88 C68,88 82,74 82,56 C82,36 70,22 50,22 Z\" fill=\"#FFA726\" /> <path d=\"M24,40 L12,14 L38,26 Z\" fill=\"#FB8C00\" /> <path d=\"M24,36 L16,18 L34,26 Z\" fill=\"#FFCC80\" /> <path d=\"M76,40 L88,14 L62,26 Z\" fill=\"#FB8C00\" /> <path d=\"M76,36 L84,18 L66,26 Z\" fill=\"#FFCC80\" /> <path d=\"M36,52 A5,6 0 1,0 36,40 A5,6 0 1,0 36,52 Z\" fill=\"#2D3436\" /> <path d=\"M38,44 A2,2 0 1,0 38,40 A2,2 0 1,0 38,44 Z\" fill=\"#FFFFFF\" /> <path d=\"M64,52 A5,6 0 1,0 64,40 A5,6 0 1,0 64,52 Z\" fill=\"#2D3436\" /> <path d=\"M66,44 A2,2 0 1,0 66,40 A2,2 0 1,0 66,44 Z\" fill=\"#FFFFFF\" /> <path d=\"M46,58 L54,58 L50,63 Z\" fill=\"#E91E63\" /> <path d=\"M44,65 Q50,71 50,63 Q50,71 56,65\" fill=\"none\" stroke=\"#5D4037\" stroke-width=\"2.5\" stroke-linecap=\"round\" /> <path d=\"M16,56 L30,58 M16,64 L30,62 M84,56 L70,58 M84,64 L70,62\" fill=\"none\" stroke=\"#FFE0B2\" stroke-width=\"2.5\" stroke-linecap=\"round\" /></svg>"}, {"name": "ANJING", "audio": "sounds/animal_dog.wav", "xml": "ic_animal_dog.xml", "bg": "#FFF9C4", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M50,22 C32,22 22,36 22,55 C22,74 34,88 50,88 C66,88 78,74 78,55 C78,36 68,22 50,22 Z\" fill=\"#8D6E63\" /> <path d=\"M24,32 C14,32 10,48 12,64 C14,72 20,74 24,68 C28,62 26,44 26,32 Z\" fill=\"#5D4037\" /> <path d=\"M76,32 C86,32 90,48 88,64 C86,72 80,74 76,68 C72,62 74,44 74,32 Z\" fill=\"#5D4037\" /> <path d=\"M50,52 C40,52 34,60 34,68 C34,78 42,82 50,82 C58,82 66,78 66,68 C66,60 60,52 50,52 Z\" fill=\"#D7CCC8\" /> <path d=\"M38,44 A4.5,5 0 1,0 38,34 A4.5,5 0 1,0 38,44 Z\" fill=\"#2D3436\" /> <path d=\"M39.5,38 A1.5,1.5 0 1,0 39.5,35 A1.5,1.5 0 1,0 39.5,38 Z\" fill=\"#FFFFFF\" /> <path d=\"M62,44 A4.5,5 0 1,0 62,34 A4.5,5 0 1,0 62,44 Z\" fill=\"#2D3436\" /> <path d=\"M63.5,38 A1.5,1.5 0 1,0 63.5,35 A1.5,1.5 0 1,0 63.5,38 Z\" fill=\"#FFFFFF\" /> <path d=\"M44,60 C44,56 56,56 56,60 C56,64 50,67 50,67 C50,67 44,64 44,60 Z\" fill=\"#2D3436\" /> <path d=\"M47,72 C47,78 53,78 53,72 Z\" fill=\"#FF5252\" /></svg>"}, {"name": "SAPI", "audio": "sounds/animal_cow.wav", "xml": "ic_animal_cow.xml", "bg": "#B2EBF2", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M50,18 C32,18 24,30 24,52 C24,72 34,84 50,84 C66,84 76,72 76,52 C76,30 68,18 50,18 Z\" fill=\"#ECEFF1\" /> <path d=\"M24,36 C24,46 36,42 34,30 C32,24 24,28 24,36 Z\" fill=\"#37474F\" /> <path d=\"M70,48 C64,48 62,58 72,62 C76,58 76,52 70,48 Z\" fill=\"#37474F\" /> <path d=\"M28,24 Q18,12 26,10 Q32,16 34,22 Z\" fill=\"#FFE082\" /> <path d=\"M72,24 Q82,12 74,10 Q68,16 66,22 Z\" fill=\"#FFE082\" /> <path d=\"M50,54 C34,54 30,64 30,72 C30,82 40,86 50,86 C60,86 70,82 70,72 C70,64 66,54 50,54 Z\" fill=\"#F8BBD0\" /> <path d=\"M42,72 A3,3 0 1,0 42,66 A3,3 0 1,0 42,72 Z\" fill=\"#880E4F\" /> <path d=\"M58,72 A3,3 0 1,0 58,66 A3,3 0 1,0 58,72 Z\" fill=\"#880E4F\" /> <path d=\"M38,42 A4,4 0 1,0 38,34 A4,4 0 1,0 38,42 Z\" fill=\"#263238\" /> <path d=\"M62,42 A4,4 0 1,0 62,34 A4,4 0 1,0 62,42 Z\" fill=\"#263238\" /></svg>"}, {"name": "AYAM", "audio": "sounds/animal_rooster.wav", "xml": "ic_animal_rooster.xml", "bg": "#FFCDD2", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M50,30 C30,30 22,46 22,66 C22,82 34,92 50,92 C66,92 78,82 78,66 C78,46 70,30 50,30 Z\" fill=\"#FFF9C4\" /> <path d=\"M40,24 C36,14 44,12 46,20 C50,10 56,12 56,20 C60,14 66,16 64,24 Z\" fill=\"#F44336\" /> <path d=\"M46,68 C42,76 50,80 52,72 Z\" fill=\"#F44336\" /> <path d=\"M42,54 L58,54 L50,66 Z\" fill=\"#FF9800\" /> <path d=\"M36,46 A4,4 0 1,0 36,38 A4,4 0 1,0 36,46 Z\" fill=\"#212121\" /> <path d=\"M64,46 A4,4 0 1,0 64,38 A4,4 0 1,0 64,46 Z\" fill=\"#212121\" /> <path d=\"M18,60 C14,70 20,80 26,76 C24,68 20,62 18,60 Z\" fill=\"#FFF176\" /> <path d=\"M82,60 C86,70 80,80 74,76 C76,68 80,62 82,60 Z\" fill=\"#FFF176\" /></svg>"}, {"name": "BEBEK", "audio": "sounds/animal_duck.wav", "xml": "ic_animal_duck.xml", "bg": "#FFF9C4", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M50,20 C34,20 28,32 28,46 C28,58 34,64 34,70 C34,84 42,90 58,90 C74,90 82,82 82,70 C82,54 72,46 72,38 C72,26 64,20 50,20 Z\" fill=\"#FFEE58\" /> <path d=\"M24,44 C12,44 14,54 26,56 C34,58 40,54 38,46 Z\" fill=\"#FB8C00\" /> <path d=\"M44,36 A4,4 0 1,0 44,28 A4,4 0 1,0 44,36 Z\" fill=\"#263238\" /> <path d=\"M45,31 A1.5,1.5 0 1,0 45,28 A1.5,1.5 0 1,0 45,31 Z\" fill=\"#FFFFFF\" /> <path d=\"M50,62 C42,62 40,74 52,78 C64,82 72,74 68,66 C64,62 56,62 50,62 Z\" fill=\"#FDD835\" /></svg>"}, {"name": "SINGA", "audio": "sounds/animal_lion.wav", "xml": "ic_animal_lion.xml", "bg": "#FFE0B2", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M50,8 C24,8 10,24 10,50 C10,76 24,92 50,92 C76,92 90,76 90,50 C90,24 76,8 50,8 Z\" fill=\"#E65100\" /> <path d=\"M50,22 C34,22 26,34 26,52 C26,70 34,80 50,80 C66,80 74,70 74,52 C74,34 66,22 50,22 Z\" fill=\"#FFB74D\" /> <path d=\"M26,26 A8,8 0 1,0 26,10 A8,8 0 1,0 26,26 Z\" fill=\"#FF9800\" /> <path d=\"M74,26 A8,8 0 1,0 74,10 A8,8 0 1,0 74,26 Z\" fill=\"#FF9800\" /> <path d=\"M50,56 C42,56 38,62 38,68 C38,76 44,78 50,78 C56,78 62,76 62,68 C62,62 58,56 50,56 Z\" fill=\"#FFE0B2\" /> <path d=\"M46,58 L54,58 L50,64 Z\" fill=\"#4E342E\" /> <path d=\"M38,44 A4,4 0 1,0 38,36 A4,4 0 1,0 38,44 Z\" fill=\"#212121\" /> <path d=\"M62,44 A4,4 0 1,0 62,36 A4,4 0 1,0 62,44 Z\" fill=\"#212121\" /></svg>"}, {"name": "GAJAH", "audio": "sounds/animal_elephant.wav", "xml": "ic_animal_elephant.xml", "bg": "#BBDEFB", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M28,24 C10,24 8,56 22,66 C28,70 34,60 34,48 Z\" fill=\"#90A4AE\" /> <path d=\"M26,30 C16,30 14,52 24,60 C26,54 28,44 28,30 Z\" fill=\"#CFD8DC\" /> <path d=\"M72,24 C90,24 92,56 78,66 C72,70 66,60 66,48 Z\" fill=\"#90A4AE\" /> <path d=\"M74,30 C84,30 86,52 76,60 C74,54 72,44 72,30 Z\" fill=\"#CFD8DC\" /> <path d=\"M50,22 C36,22 30,34 30,52 C30,68 38,74 44,74 C44,82 46,90 54,90 C60,90 60,82 56,76 C54,72 54,64 58,60 C64,60 70,54 70,52 C70,34 64,22 50,22 Z\" fill=\"#B0BEC5\" /> <path d=\"M40,44 A3.5,4 0 1,0 40,36 A3.5,4 0 1,0 40,44 Z\" fill=\"#263238\" /> <path d=\"M60,44 A3.5,4 0 1,0 60,36 A3.5,4 0 1,0 60,44 Z\" fill=\"#263238\" /></svg>"}, {"name": "KUDA", "audio": "sounds/animal_horse.wav", "xml": "ic_animal_horse.xml", "bg": "#F8BBD0", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M40,16 L32,32 L26,56 C24,68 30,76 42,76 L62,76 C64,64 68,52 72,40 L62,16 Z\" fill=\"#A1887F\" /> <path d=\"M26,58 C24,68 30,78 44,78 L54,78 C52,66 48,58 40,58 Z\" fill=\"#8D6E63\" /> <path d=\"M38,18 L34,6 L44,14 Z\" fill=\"#8D6E63\" /> <path d=\"M60,18 L66,6 L56,14 Z\" fill=\"#8D6E63\" /> <path d=\"M62,14 C66,24 74,32 76,50 L68,52 C64,36 58,26 56,14 Z\" fill=\"#4E342E\" /> <path d=\"M44,40 A4,4 0 1,0 44,32 A4,4 0 1,0 44,40 Z\" fill=\"#212121\" /></svg>"}, {"name": "DOMBA", "audio": "sounds/animal_sheep.wav", "xml": "ic_animal_sheep.xml", "bg": "#C8E6C9", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M50,14 C36,14 26,22 22,34 C12,38 10,54 18,66 C14,78 28,90 40,86 C48,92 62,90 68,84 C80,84 88,72 84,60 C92,48 86,34 76,30 C72,18 60,14 50,14 Z\" fill=\"#ECEFF1\" /> <path d=\"M50,38 C38,38 32,46 32,58 C32,70 40,78 50,78 C60,78 68,70 68,58 C68,46 62,38 50,38 Z\" fill=\"#455A64\" /> <path d=\"M32,44 C22,44 18,52 24,56 C28,58 32,54 32,44 Z\" fill=\"#37474F\" /> <path d=\"M68,44 C78,44 82,52 76,56 C72,58 68,54 68,44 Z\" fill=\"#37474F\" /> <path d=\"M42,54 A3,3 0 1,0 42,48 A3,3 0 1,0 42,54 Z\" fill=\"#FFFFFF\" /> <path d=\"M42,52 A1.5,1.5 0 1,0 42,49 A1.5,1.5 0 1,0 42,52 Z\" fill=\"#212121\" /> <path d=\"M58,54 A3,3 0 1,0 58,48 A3,3 0 1,0 58,54 Z\" fill=\"#FFFFFF\" /> <path d=\"M58,52 A1.5,1.5 0 1,0 58,49 A1.5,1.5 0 1,0 58,52 Z\" fill=\"#212121\" /></svg>"}, {"name": "BURUNG", "audio": "sounds/animal_bird.wav", "xml": "ic_animal_bird.xml", "bg": "#B2EBF2", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M46,26 C30,26 22,40 22,56 C22,74 34,86 50,86 C64,86 74,78 86,88 L82,68 C86,60 84,48 76,38 C68,28 58,26 46,26 Z\" fill=\"#42A5F5\" /> <path d=\"M36,54 C36,70 44,82 56,82 C44,82 36,72 36,54 Z\" fill=\"#90CAF9\" /> <path d=\"M24,46 L10,50 L24,56 Z\" fill=\"#FFA726\" /> <path d=\"M38,42 A4,4 0 1,0 38,34 A4,4 0 1,0 38,42 Z\" fill=\"#212121\" /> <path d=\"M39,37 A1.5,1.5 0 1,0 39,34 A1.5,1.5 0 1,0 39,37 Z\" fill=\"#FFFFFF\" /> <path d=\"M52,50 C44,50 42,66 58,70 C68,72 72,60 68,54 C64,50 58,50 52,50 Z\" fill=\"#1E88E5\" /></svg>"}]}, {"id": "vehicle", "title": "Kendaraan", "icon": "\ud83d\ude97", "color": "#03A9F4", "items": [{"name": "MOBIL", "audio": "sounds/vehicle_car.wav", "xml": "ic_vehicle_car.xml", "bg": "#FFCDD2", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M14,56 L24,36 C26,32 30,30 36,30 L64,30 C70,30 74,32 76,36 L86,56 L90,62 C92,66 88,72 82,72 L18,72 C12,72 8,66 10,62 Z\" fill=\"#E53935\" /> <path d=\"M36,34 L48,34 L48,52 L26,52 L34,36 C34.5,35 35,34 36,34 Z\" fill=\"#B3E5FC\" /> <path d=\"M52,34 L64,34 C65,34 65.5,35 66,36 L74,52 L52,52 Z\" fill=\"#B3E5FC\" /> <path d=\"M12,58 A4,4 0 1,0 12,50 A4,4 0 1,0 12,58 Z\" fill=\"#FFEE58\" /> <path d=\"M88,58 A4,4 0 1,0 88,50 A4,4 0 1,0 88,58 Z\" fill=\"#FFCA28\" /> <path d=\"M28,82 A10,10 0 1,0 28,62 A10,10 0 1,0 28,82 Z\" fill=\"#37474F\" /> <path d=\"M28,76 A4,4 0 1,0 28,68 A4,4 0 1,0 28,76 Z\" fill=\"#CFD8DC\" /> <path d=\"M72,82 A10,10 0 1,0 72,62 A10,10 0 1,0 72,82 Z\" fill=\"#37474F\" /> <path d=\"M72,76 A4,4 0 1,0 72,68 A4,4 0 1,0 72,76 Z\" fill=\"#CFD8DC\" /></svg>"}, {"name": "MOTOR", "audio": "sounds/vehicle_motorcycle.wav", "xml": "ic_vehicle_motorcycle.xml", "bg": "#B2EBF2", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M32,46 L48,36 L66,36 L74,52 L56,58 L42,54 Z\" fill=\"#00ACC1\" /> <path d=\"M66,36 L72,24 L64,22\" fill=\"none\" stroke=\"#37474F\" stroke-width=\"4\" stroke-linecap=\"round\" /> <path d=\"M76,32 A4,4 0 1,0 76,24 A4,4 0 1,0 76,32 Z\" fill=\"#FFEE58\" /> <path d=\"M44,36 C42,34 54,34 56,36 L54,42 L42,42 Z\" fill=\"#212121\" /> <path d=\"M76,78 A12,12 0 1,0 76,54 A12,12 0 1,0 76,78 Z\" fill=\"#37474F\" /> <path d=\"M76,71 A5,5 0 1,0 76,61 A5,5 0 1,0 76,71 Z\" fill=\"#ECEFF1\" /> <path d=\"M26,78 A12,12 0 1,0 26,54 A12,12 0 1,0 26,78 Z\" fill=\"#37474F\" /> <path d=\"M26,71 A5,5 0 1,0 26,61 A5,5 0 1,0 26,71 Z\" fill=\"#ECEFF1\" /></svg>"}, {"name": "BUS", "audio": "sounds/vehicle_bus.wav", "xml": "ic_vehicle_bus.xml", "bg": "#FFF9C4", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M16,30 C16,24 22,20 28,20 L72,20 C78,20 84,24 84,30 L84,68 C84,72 80,74 76,74 L24,74 C20,74 16,72 16,68 Z\" fill=\"#FDD835\" /> <path d=\"M22,28 L38,28 L38,44 L22,44 Z\" fill=\"#81D4FA\" /> <path d=\"M42,28 L58,28 L58,44 L42,44 Z\" fill=\"#81D4FA\" /> <path d=\"M62,28 L78,28 L78,44 L62,44 Z\" fill=\"#81D4FA\" /> <path d=\"M16,50 L84,50 L84,56 L16,56 Z\" fill=\"#FB8C00\" /> <path d=\"M30,84 A9,9 0 1,0 30,66 A9,9 0 1,0 30,84 Z\" fill=\"#37474F\" /> <path d=\"M30,78 A3,3 0 1,0 30,72 A3,3 0 1,0 30,78 Z\" fill=\"#CFD8DC\" /> <path d=\"M70,84 A9,9 0 1,0 70,66 A9,9 0 1,0 70,84 Z\" fill=\"#37474F\" /> <path d=\"M70,78 A3,3 0 1,0 70,72 A3,3 0 1,0 70,78 Z\" fill=\"#CFD8DC\" /></svg>"}, {"name": "KERETA API", "audio": "sounds/vehicle_train.wav", "xml": "ic_vehicle_train.xml", "bg": "#C8E6C9", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M18,34 L40,34 L40,70 L18,70 Z\" fill=\"#1E88E5\" /> <path d=\"M14,30 C14,28 20,26 28,26 L42,26 L40,34 L16,34 Z\" fill=\"#D32F2F\" /> <path d=\"M40,42 L80,42 L80,70 L40,70 Z\" fill=\"#43A047\" /> <path d=\"M66,28 L76,28 L74,42 L68,42 Z\" fill=\"#FB8C00\" /> <path d=\"M70,18 A5,5 0 1,0 70,8 A5,5 0 1,0 70,18 Z\" fill=\"#ECEFF1\" /> <path d=\"M24,40 L34,40 L34,54 L24,54 Z\" fill=\"#B3E5FC\" /> <path d=\"M28,82 A8,8 0 1,0 28,66 A8,8 0 1,0 28,82 Z\" fill=\"#37474F\" /> <path d=\"M50,82 A8,8 0 1,0 50,66 A8,8 0 1,0 50,82 Z\" fill=\"#37474F\" /> <path d=\"M72,82 A8,8 0 1,0 72,66 A8,8 0 1,0 72,82 Z\" fill=\"#37474F\" /></svg>"}, {"name": "PESAWAT", "audio": "sounds/vehicle_airplane.wav", "xml": "ic_vehicle_airplane.xml", "bg": "#BBDEFB", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M88,48 C88,44 82,42 74,42 L34,44 L16,30 L10,34 L20,48 L14,50 L10,46 L6,48 L10,54 L26,54 L36,54 L74,54 C82,54 88,52 88,48 Z\" fill=\"#ECEFF1\" /> <path d=\"M44,48 L32,20 L44,20 L62,48 Z\" fill=\"#1E88E5\" /> <path d=\"M44,52 L36,78 L46,78 L60,52 Z\" fill=\"#1976D2\" /> <path d=\"M74,44 L82,46 L82,48 L74,48 Z\" fill=\"#0288D1\" /> <path d=\"M10,30 L16,30 L18,36 L12,36 Z\" fill=\"#E53935\" /></svg>"}, {"name": "HELIKOPTER", "audio": "sounds/vehicle_helicopter.wav", "xml": "ic_vehicle_helicopter.xml", "bg": "#FFE0B2", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M16,18 L84,18 L84,22 L16,22 Z\" fill=\"#37474F\" /> <path d=\"M48,22 L52,22 L52,32 L48,32 Z\" fill=\"#78909C\" /> <path d=\"M30,32 C48,32 68,32 72,44 C76,56 68,68 48,68 C34,68 24,56 24,46 C24,38 28,32 30,32 Z\" fill=\"#FF7043\" /> <path d=\"M56,36 C64,38 68,44 68,50 L50,50 L50,36 Z\" fill=\"#B3E5FC\" /> <path d=\"M30,46 L10,40 L10,44 L30,52 Z\" fill=\"#FF7043\" /> <path d=\"M34,68 L34,76 M58,68 L58,76 M24,76 L68,76\" fill=\"none\" stroke=\"#37474F\" stroke-width=\"3\" stroke-linecap=\"round\" /></svg>"}, {"name": "KAPAL LAUT", "audio": "sounds/vehicle_ship.wav", "xml": "ic_vehicle_ship.xml", "bg": "#B2EBF2", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M14,54 L86,54 L76,74 L24,74 Z\" fill=\"#C62828\" /> <path d=\"M30,38 L68,38 L68,54 L30,54 Z\" fill=\"#ECEFF1\" /> <path d=\"M38,46 A3,3 0 1,0 38,40 A3,3 0 1,0 38,46 Z\" fill=\"#0288D1\" /> <path d=\"M50,46 A3,3 0 1,0 50,40 A3,3 0 1,0 50,46 Z\" fill=\"#0288D1\" /> <path d=\"M62,46 A3,3 0 1,0 62,40 A3,3 0 1,0 62,46 Z\" fill=\"#0288D1\" /> <path d=\"M44,26 L54,26 L54,38 L44,38 Z\" fill=\"#FBC02D\" /> <path d=\"M10,74 Q25,68 40,74 Q55,80 70,74 Q85,68 95,74 L95,84 L10,84 Z\" fill=\"#29B6F6\" /></svg>"}, {"name": "SEPEDA", "audio": "sounds/vehicle_bicycle.wav", "xml": "ic_vehicle_bicycle.xml", "bg": "#E1BEE7", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M24,76 A14,14 0 1,0 24,48 A14,14 0 1,0 24,76 Z\" fill=\"none\" stroke=\"#37474F\" stroke-width=\"4\" /> <path d=\"M76,76 A14,14 0 1,0 76,48 A14,14 0 1,0 76,76 Z\" fill=\"none\" stroke=\"#37474F\" stroke-width=\"4\" /> <path d=\"M24,62 L46,62 L64,40 L76,62 M46,62 L54,40 L38,40 M54,40 L70,30 L66,24\" fill=\"none\" stroke=\"#8E24AA\" stroke-width=\"4\" stroke-linejoin=\"round\" /> <path d=\"M34,38 L46,38 L42,42 L34,40 Z\" fill=\"#212121\" /></svg>"}, {"name": "AMBULANS", "audio": "sounds/vehicle_ambulance.wav", "xml": "ic_vehicle_ambulance.xml", "bg": "#F8BBD0", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M14,64 L14,36 C14,32 18,28 22,28 L66,28 L82,44 L86,64 Z\" fill=\"#ECEFF1\" /> <path d=\"M64,34 L76,46 L64,46 Z\" fill=\"#81D4FA\" /> <path d=\"M34,42 L42,42 L42,34 L48,34 L48,42 L56,42 L56,48 L48,48 L48,56 L42,56 L42,48 L34,48 Z\" fill=\"#E53935\" /> <path d=\"M40,24 L48,24 L48,28 L40,28 Z\" fill=\"#1E88E5\" /> <path d=\"M28,78 A9,9 0 1,0 28,60 A9,9 0 1,0 28,78 Z\" fill=\"#37474F\" /> <path d=\"M72,78 A9,9 0 1,0 72,60 A9,9 0 1,0 72,78 Z\" fill=\"#37474F\" /></svg>"}, {"name": "PEMADAM", "audio": "sounds/vehicle_fire_truck.wav", "xml": "ic_vehicle_fire_truck.xml", "bg": "#FFCDD2", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M14,66 L14,38 L64,38 L78,48 L86,52 L86,66 Z\" fill=\"#D32F2F\" /> <path d=\"M20,28 L60,28 M20,34 L60,34 M28,28 L28,34 M38,28 L38,34 M48,28 L48,34 M58,28 L58,34\" fill=\"none\" stroke=\"#B0BEC5\" stroke-width=\"2.5\" /> <path d=\"M64,42 L76,50 L64,50 Z\" fill=\"#81D4FA\" /> <path d=\"M66,32 L72,32 L72,38 L66,38 Z\" fill=\"#00E5FF\" /> <path d=\"M28,80 A9,9 0 1,0 28,62 A9,9 0 1,0 28,80 Z\" fill=\"#212121\" /> <path d=\"M72,80 A9,9 0 1,0 72,62 A9,9 0 1,0 72,80 Z\" fill=\"#212121\" /></svg>"}]}, {"id": "music", "title": "Alat Musik", "icon": "\ud83c\udfb5", "color": "#9C27B0", "items": [{"name": "GITAR", "audio": "sounds/music_guitar.wav", "xml": "ic_music_guitar.xml", "bg": "#FFE0B2", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M32,54 C24,58 24,74 34,82 C44,90 58,88 64,78 C70,70 66,60 56,58 C52,56 50,50 56,44 C62,38 58,30 50,30 C40,30 38,42 42,46 C46,50 40,52 32,54 Z\" fill=\"#D84315\" /> <path d=\"M48,64 A6,6 0 1,0 48,52 A6,6 0 1,0 48,64 Z\" fill=\"#212121\" /> <path d=\"M48,34 L56,34 L78,12 L70,12 Z\" fill=\"#FFB74D\" /> <path d=\"M76,14 L86,4 L80,2 L70,12 Z\" fill=\"#8D6E63\" /></svg>"}, {"name": "PIANO", "audio": "sounds/music_piano.wav", "xml": "ic_music_piano.xml", "bg": "#BBDEFB", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M14,24 L86,24 L86,76 L14,76 Z\" fill=\"#37474F\" /> <path d=\"M18,34 L26,34 L26,72 L18,72 Z\" fill=\"#FFFFFF\" /> <path d=\"M28,34 L36,34 L36,72 L28,72 Z\" fill=\"#FFFFFF\" /> <path d=\"M38,34 L46,34 L46,72 L38,72 Z\" fill=\"#FFFFFF\" /> <path d=\"M48,34 L56,34 L56,72 L48,72 Z\" fill=\"#FFFFFF\" /> <path d=\"M58,34 L66,34 L66,72 L58,72 Z\" fill=\"#FFFFFF\" /> <path d=\"M68,34 L76,34 L76,72 L68,72 Z\" fill=\"#FFFFFF\" /> <path d=\"M78,34 L82,34 L82,72 L78,72 Z\" fill=\"#FFFFFF\" /> <path d=\"M24,34 L29,34 L29,56 L24,56 Z\" fill=\"#212121\" /> <path d=\"M34,34 L39,34 L39,56 L34,56 Z\" fill=\"#212121\" /> <path d=\"M54,34 L59,34 L59,56 L54,56 Z\" fill=\"#212121\" /> <path d=\"M64,34 L69,34 L69,56 L64,56 Z\" fill=\"#212121\" /> <path d=\"M74,34 L79,34 L79,56 L74,56 Z\" fill=\"#212121\" /></svg>"}, {"name": "DRUM", "audio": "sounds/music_drum.wav", "xml": "ic_music_drum.xml", "bg": "#FFCDD2", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M20,40 L80,40 L80,72 C80,82 20,82 20,72 Z\" fill=\"#E53935\" /> <path d=\"M50,28 C70,28 80,34 80,40 C80,46 70,52 50,52 C30,52 20,46 20,40 C20,34 30,28 50,28 Z\" fill=\"#ECEFF1\" /> <path d=\"M16,16 L44,36 M84,16 L56,36\" fill=\"none\" stroke=\"#FFA726\" stroke-width=\"3.5\" stroke-linecap=\"round\" /> <path d=\"M24,46 L36,74 L48,46 L60,74 L72,46\" fill=\"none\" stroke=\"#FFFFFF\" stroke-width=\"2.5\" /></svg>"}, {"name": "TEROMPET", "audio": "sounds/music_trumpet.wav", "xml": "ic_music_trumpet.xml", "bg": "#FFF9C4", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M84,26 C86,22 88,38 88,50 C88,62 86,78 84,74 L68,54 L14,54 L14,46 L68,46 Z\" fill=\"#FFD54F\" /> <path d=\"M30,46 L30,36 L54,36 L54,46\" fill=\"none\" stroke=\"#FFC107\" stroke-width=\"3\" /> <path d=\"M38,30 L42,30 L42,46 L38,46 Z\" fill=\"#FFA000\" /> <path d=\"M46,30 L50,30 L50,46 L46,46 Z\" fill=\"#FFA000\" /></svg>"}, {"name": "BIOLA", "audio": "sounds/music_violin.wav", "xml": "ic_music_violin.xml", "bg": "#E1BEE7", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M38,36 C34,42 42,48 40,54 C38,60 30,64 34,74 C38,82 54,84 60,74 C64,66 56,60 54,54 C52,48 60,42 56,36 C52,30 42,30 38,36 Z\" fill=\"#8D6E63\" /> <path d=\"M45,32 L49,32 L49,12 L45,12 Z\" fill=\"#5D4037\" /> <path d=\"M44,12 A3,3 0 1,0 44,6 A3,3 0 1,0 44,12 Z\" fill=\"#3E2723\" /> <path d=\"M24,24 L74,78\" fill=\"none\" stroke=\"#FFA726\" stroke-width=\"2.5\" stroke-linecap=\"round\" /></svg>"}, {"name": "XYLOPHONE", "audio": "sounds/music_xylophone.wav", "xml": "ic_music_xylophone.xml", "bg": "#B2EBF2", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M16,24 L24,24 L24,76 L16,76 Z\" fill=\"#E53935\" /> <path d=\"M26,27 L34,27 L34,73 L26,73 Z\" fill=\"#FB8C00\" /> <path d=\"M36,30 L44,30 L44,70 L36,70 Z\" fill=\"#FDD835\" /> <path d=\"M46,33 L54,33 L54,67 L46,67 Z\" fill=\"#43A047\" /> <path d=\"M56,36 L64,36 L64,64 L56,64 Z\" fill=\"#00ACC1\" /> <path d=\"M66,39 L74,39 L74,61 L66,61 Z\" fill=\"#1E88E5\" /> <path d=\"M76,42 L84,42 L84,58 L76,58 Z\" fill=\"#8E24AA\" /> <path d=\"M24,84 L52,50\" fill=\"none\" stroke=\"#795548\" stroke-width=\"2.5\" /> <path d=\"M54,52 A4,4 0 1,0 54,44 A4,4 0 1,0 54,52 Z\" fill=\"#FF5722\" /></svg>"}, {"name": "SERULING", "audio": "sounds/music_flute.wav", "xml": "ic_music_flute.xml", "bg": "#C8E6C9", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M14,46 L86,46 L86,54 L14,54 Z\" fill=\"#CFD8DC\" /> <path d=\"M84,44 L88,44 L88,56 L84,56 Z\" fill=\"#B0BEC5\" /> <path d=\"M26,50 A2,2 0 1,0 26,46 A2,2 0 1,0 26,50 Z\" fill=\"#37474F\" /> <path d=\"M36,50 A2,2 0 1,0 36,46 A2,2 0 1,0 36,50 Z\" fill=\"#37474F\" /> <path d=\"M46,50 A2,2 0 1,0 46,46 A2,2 0 1,0 46,50 Z\" fill=\"#37474F\" /> <path d=\"M56,50 A2,2 0 1,0 56,46 A2,2 0 1,0 56,50 Z\" fill=\"#37474F\" /> <path d=\"M66,50 A2,2 0 1,0 66,46 A2,2 0 1,0 66,50 Z\" fill=\"#37474F\" /></svg>"}, {"name": "HARMONIKA", "audio": "sounds/music_harmonica.wav", "xml": "ic_music_harmonica.xml", "bg": "#BBDEFB", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M16,36 C16,32 20,30 26,30 L74,30 C80,30 84,32 84,36 L84,64 C84,68 80,70 74,70 L26,70 C20,70 16,68 16,64 Z\" fill=\"#90A4AE\" /> <path d=\"M22,36 L78,36 L78,64 L22,64 Z\" fill=\"#ECEFF1\" /> <path d=\"M26,44 L32,44 L32,56 L26,56 Z\" fill=\"#263238\" /> <path d=\"M36,44 L42,44 L42,56 L36,56 Z\" fill=\"#263238\" /> <path d=\"M46,44 L52,44 L52,56 L46,56 Z\" fill=\"#263238\" /> <path d=\"M56,44 L62,44 L62,56 L56,56 Z\" fill=\"#263238\" /> <path d=\"M66,44 L72,44 L72,56 L66,56 Z\" fill=\"#263238\" /></svg>"}, {"name": "MARAKAS", "audio": "sounds/music_maracas.wav", "xml": "ic_music_maracas.xml", "bg": "#F8BBD0", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M36,18 C26,18 20,30 28,42 C32,48 38,54 36,64 L30,82 L38,84 L44,66 C48,58 54,46 50,34 C48,22 42,18 36,18 Z\" fill=\"#FF7043\" /> <path d=\"M26,34 L48,34 L46,40 L28,40 Z\" fill=\"#FFEE58\" /> <path d=\"M64,18 C54,18 48,30 56,42 C60,48 66,54 64,64 L58,82 L66,84 L72,66 C76,58 82,46 78,34 C76,22 70,18 64,18 Z\" fill=\"#42A5F5\" /> <path d=\"M54,34 L76,34 L74,40 L56,40 Z\" fill=\"#FFCA28\" /></svg>"}, {"name": "SAKSOFON", "audio": "sounds/music_saxophone.wav", "xml": "ic_music_saxophone.xml", "bg": "#FFF9C4", "svg": "<svg viewBox=\"0 0 100 100\" width=\"105\" height=\"105\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M36,20 L44,20 L44,64 C44,78 68,82 74,70 C78,62 76,46 84,40 L68,36 C64,46 64,60 58,62 C52,64 52,56 52,48 L52,20 Z\" fill=\"#FFB300\" /> <path d=\"M36,20 C32,18 24,20 22,14 L18,16 C20,24 28,26 36,24 Z\" fill=\"#FFA000\" /> <path d=\"M48,32 A2,2 0 1,0 48,28 A2,2 0 1,0 48,32 Z\" fill=\"#FFFFFF\" /> <path d=\"M48,40 A2,2 0 1,0 48,36 A2,2 0 1,0 48,40 Z\" fill=\"#FFFFFF\" /> <path d=\"M48,48 A2,2 0 1,0 48,44 A2,2 0 1,0 48,48 Z\" fill=\"#FFFFFF\" /></svg>"}]}];
+        let activeAudio = null;
+
+        function playSound(audioPath, cardEl) {
+            // Animasi membal
+            cardEl.classList.add('bounce');
+            setTimeout(() => cardEl.classList.remove('bounce'), 220);
+
+            // Putar audio
+            if (activeAudio) {
+                activeAudio.pause();
+                activeAudio.currentTime = 0;
+            }
+            activeAudio = new Audio(audioPath);
+            activeAudio.play().catch(err => console.log('Playback error:', err));
+        }
+
+        function switchCategory(catId) {
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons[0].className = 'tab-btn ' + (catId === 'animal' ? 'active-animal' : '');
+            buttons[1].className = 'tab-btn ' + (catId === 'vehicle' ? 'active-vehicle' : '');
+            buttons[2].className = 'tab-btn ' + (catId === 'music' ? 'active-music' : '');
+
+            const cat = categoryData.find(c => c.id === catId);
+            const grid = document.getElementById('cardsGrid');
+            grid.innerHTML = '';
+
+            cat.items.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.style.background = item.bg;
+                card.innerHTML = `
+                    <div class="card-img">${item.svg}</div>
+                    <div class="card-name">${item.name}</div>
+                    <div class="play-btn">
+                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                `;
+                card.onclick = () => playSound(item.audio, card);
+                grid.appendChild(card);
+            });
+        }
+
+        // Inisialisasi awal pada kategori Hewan
+        switchCategory('animal');
+
+        // Daftarkan Service Worker untuk fitur 100% Offline
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('ServiceWorker registered:', reg.scope))
+                    .catch(err => console.log('ServiceWorker registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>

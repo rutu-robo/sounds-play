@@ -1,0 +1,21 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Big Fluffy Mane -->
+    <path android:fillColor="#E65100" android:pathData="M50,8 C24,8 10,24 10,50 C10,76 24,92 50,92 C76,92 90,76 90,50 C90,24 76,8 50,8 Z" />
+    <!-- Lion Face -->
+    <path android:fillColor="#FFB74D" android:pathData="M50,22 C34,22 26,34 26,52 C26,70 34,80 50,80 C66,80 74,70 74,52 C74,34 66,22 50,22 Z" />
+    <!-- Ears -->
+    <path android:fillColor="#FF9800" android:pathData="M26,26 A8,8 0 1,0 26,10 A8,8 0 1,0 26,26 Z" />
+    <path android:fillColor="#FF9800" android:pathData="M74,26 A8,8 0 1,0 74,10 A8,8 0 1,0 74,26 Z" />
+    <!-- Snout & Nose -->
+    <path android:fillColor="#FFE0B2" android:pathData="M50,56 C42,56 38,62 38,68 C38,76 44,78 50,78 C56,78 62,76 62,68 C62,62 58,56 50,56 Z" />
+    <path android:fillColor="#4E342E" android:pathData="M46,58 L54,58 L50,64 Z" />
+    <!-- Eyes -->
+    <path android:fillColor="#212121" android:pathData="M38,44 A4,4 0 1,0 38,36 A4,4 0 1,0 38,44 Z" />
+    <path android:fillColor="#212121" android:pathData="M62,44 A4,4 0 1,0 62,36 A4,4 0 1,0 62,44 Z" />
+
+</vector>

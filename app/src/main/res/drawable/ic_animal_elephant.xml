@@ -1,0 +1,19 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Left Big Ear -->
+    <path android:fillColor="#90A4AE" android:pathData="M28,24 C10,24 8,56 22,66 C28,70 34,60 34,48 Z" />
+    <path android:fillColor="#CFD8DC" android:pathData="M26,30 C16,30 14,52 24,60 C26,54 28,44 28,30 Z" />
+    <!-- Right Big Ear -->
+    <path android:fillColor="#90A4AE" android:pathData="M72,24 C90,24 92,56 78,66 C72,70 66,60 66,48 Z" />
+    <path android:fillColor="#CFD8DC" android:pathData="M74,30 C84,30 86,52 76,60 C74,54 72,44 72,30 Z" />
+    <!-- Head & Trunk -->
+    <path android:fillColor="#B0BEC5" android:pathData="M50,22 C36,22 30,34 30,52 C30,68 38,74 44,74 C44,82 46,90 54,90 C60,90 60,82 56,76 C54,72 54,64 58,60 C64,60 70,54 70,52 C70,34 64,22 50,22 Z" />
+    <!-- Eyes -->
+    <path android:fillColor="#263238" android:pathData="M40,44 A3.5,4 0 1,0 40,36 A3.5,4 0 1,0 40,44 Z" />
+    <path android:fillColor="#263238" android:pathData="M60,44 A3.5,4 0 1,0 60,36 A3.5,4 0 1,0 60,44 Z" />
+
+</vector>

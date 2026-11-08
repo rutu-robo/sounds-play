@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Silver Body -->
+    <path android:fillColor="#90A4AE" android:pathData="M16,36 C16,32 20,30 26,30 L74,30 C80,30 84,32 84,36 L84,64 C84,68 80,70 74,70 L26,70 C20,70 16,68 16,64 Z" />
+    <!-- Inset Plate -->
+    <path android:fillColor="#ECEFF1" android:pathData="M22,36 L78,36 L78,64 L22,64 Z" />
+    <!-- Holes -->
+    <path android:fillColor="#263238" android:pathData="M26,44 L32,44 L32,56 L26,56 Z" />
+    <path android:fillColor="#263238" android:pathData="M36,44 L42,44 L42,56 L36,56 Z" />
+    <path android:fillColor="#263238" android:pathData="M46,44 L52,44 L52,56 L46,56 Z" />
+    <path android:fillColor="#263238" android:pathData="M56,44 L62,44 L62,56 L56,56 Z" />
+    <path android:fillColor="#263238" android:pathData="M66,44 L72,44 L72,56 L66,56 Z" />
+
+</vector>

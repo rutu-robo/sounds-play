@@ -1,0 +1,16 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Saxophone Body Tube & Bell -->
+    <path android:fillColor="#FFB300" android:pathData="M36,20 L44,20 L44,64 C44,78 68,82 74,70 C78,62 76,46 84,40 L68,36 C64,46 64,60 58,62 C52,64 52,56 52,48 L52,20 Z" />
+    <!-- Neck -->
+    <path android:fillColor="#FFA000" android:pathData="M36,20 C32,18 24,20 22,14 L18,16 C20,24 28,26 36,24 Z" />
+    <!-- Keys -->
+    <path android:fillColor="#FFFFFF" android:pathData="M48,32 A2,2 0 1,0 48,28 A2,2 0 1,0 48,32 Z" />
+    <path android:fillColor="#FFFFFF" android:pathData="M48,40 A2,2 0 1,0 48,36 A2,2 0 1,0 48,40 Z" />
+    <path android:fillColor="#FFFFFF" android:pathData="M48,48 A2,2 0 1,0 48,44 A2,2 0 1,0 48,48 Z" />
+
+</vector>

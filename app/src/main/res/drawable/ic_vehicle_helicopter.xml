@@ -1,0 +1,20 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Rotor Blade -->
+    <path android:fillColor="#37474F" android:pathData="M16,18 L84,18 L84,22 L16,22 Z" />
+    <path android:fillColor="#78909C" android:pathData="M48,22 L52,22 L52,32 L48,32 Z" />
+    <!-- Main Body Cabin -->
+    <path android:fillColor="#FF7043" android:pathData="M30,32 C48,32 68,32 72,44 C76,56 68,68 48,68 C34,68 24,56 24,46 C24,38 28,32 30,32 Z" />
+    <!-- Windshield -->
+    <path android:fillColor="#B3E5FC" android:pathData="M56,36 C64,38 68,44 68,50 L50,50 L50,36 Z" />
+    <!-- Tail Boom -->
+    <path android:fillColor="#FF7043" android:pathData="M30,46 L10,40 L10,44 L30,52 Z" />
+    <!-- Skids -->
+    <path android:fillColor="#00000000" android:strokeColor="#37474F" android:strokeWidth="3" android:strokeLineCap="round"
+          android:pathData="M34,68 L34,76 M58,68 L58,76 M24,76 L68,76" />
+
+</vector>

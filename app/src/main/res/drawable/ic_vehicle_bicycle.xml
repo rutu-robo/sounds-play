@@ -1,0 +1,19 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Left Wheel -->
+    <path android:fillColor="#00000000" android:strokeColor="#37474F" android:strokeWidth="4"
+          android:pathData="M24,76 A14,14 0 1,0 24,48 A14,14 0 1,0 24,76 Z" />
+    <!-- Right Wheel -->
+    <path android:fillColor="#00000000" android:strokeColor="#37474F" android:strokeWidth="4"
+          android:pathData="M76,76 A14,14 0 1,0 76,48 A14,14 0 1,0 76,76 Z" />
+    <!-- Colorful Bike Frame -->
+    <path android:fillColor="#00000000" android:strokeColor="#8E24AA" android:strokeWidth="4" android:strokeLineJoin="round"
+          android:pathData="M24,62 L46,62 L64,40 L76,62 M46,62 L54,40 L38,40 M54,40 L70,30 L66,24" />
+    <!-- Seat -->
+    <path android:fillColor="#212121" android:pathData="M34,38 L46,38 L42,42 L34,40 Z" />
+
+</vector>

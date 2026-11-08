@@ -1,0 +1,15 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Background Circle -->
+    <path
+        android:fillColor="#FF6B6B"
+        android:pathData="M54,4 C26.39,4 4,26.39 4,54 C4,81.61 26.39,104 54,104 C81.61,104 104,81.61 104,54 C104,26.39 81.61,4 54,4 Z"/>
+    <!-- Speaker / Sound Wave Icon in Center -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M40,43 L32,43 C30.9,43 30,43.9 30,45 L30,63 C30,64.1 30.9,65 32,65 L40,65 L52,77 L52,31 L40,43 Z M62,40 C67.5,43.2 71,48.2 71,54 C71,59.8 67.5,64.8 62,68 L62,63.5 C65.3,61 67.5,57.8 67.5,54 C67.5,50.2 65.3,47 62,44.5 L62,40 Z M62,29 C72,32.7 78,42.5 78,54 C78,65.5 72,75.3 62,79 L62,74.5 C70,71 74.5,63.2 74.5,54 C74.5,44.8 70,37 62,33.5 L62,29 Z"/>
+</vector>
+

@@ -1,0 +1,20 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Red Body -->
+    <path android:fillColor="#D32F2F" android:pathData="M14,66 L14,38 L64,38 L78,48 L86,52 L86,66 Z" />
+    <!-- Ladder -->
+    <path android:fillColor="#00000000" android:strokeColor="#B0BEC5" android:strokeWidth="2.5"
+          android:pathData="M20,28 L60,28 M20,34 L60,34 M28,28 L28,34 M38,28 L38,34 M48,28 L48,34 M58,28 L58,34" />
+    <!-- Windshield -->
+    <path android:fillColor="#81D4FA" android:pathData="M64,42 L76,50 L64,50 Z" />
+    <!-- Siren Light -->
+    <path android:fillColor="#00E5FF" android:pathData="M66,32 L72,32 L72,38 L66,38 Z" />
+    <!-- Wheels -->
+    <path android:fillColor="#212121" android:pathData="M28,80 A9,9 0 1,0 28,62 A9,9 0 1,0 28,80 Z" />
+    <path android:fillColor="#212121" android:pathData="M72,80 A9,9 0 1,0 72,62 A9,9 0 1,0 72,80 Z" />
+
+</vector>

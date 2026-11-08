@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Body -->
+    <path android:fillColor="#FFF9C4" android:pathData="M50,30 C30,30 22,46 22,66 C22,82 34,92 50,92 C66,92 78,82 78,66 C78,46 70,30 50,30 Z" />
+    <!-- Red Comb -->
+    <path android:fillColor="#F44336" android:pathData="M40,24 C36,14 44,12 46,20 C50,10 56,12 56,20 C60,14 66,16 64,24 Z" />
+    <!-- Red Wattle -->
+    <path android:fillColor="#F44336" android:pathData="M46,68 C42,76 50,80 52,72 Z" />
+    <!-- Orange Beak -->
+    <path android:fillColor="#FF9800" android:pathData="M42,54 L58,54 L50,66 Z" />
+    <!-- Eyes -->
+    <path android:fillColor="#212121" android:pathData="M36,46 A4,4 0 1,0 36,38 A4,4 0 1,0 36,46 Z" />
+    <path android:fillColor="#212121" android:pathData="M64,46 A4,4 0 1,0 64,38 A4,4 0 1,0 64,46 Z" />
+    <!-- Wings -->
+    <path android:fillColor="#FFF176" android:pathData="M18,60 C14,70 20,80 26,76 C24,68 20,62 18,60 Z" />
+    <path android:fillColor="#FFF176" android:pathData="M82,60 C86,70 80,80 74,76 C76,68 80,62 82,60 Z" />
+
+</vector>

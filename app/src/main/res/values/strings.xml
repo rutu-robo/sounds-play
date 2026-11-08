@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sound Play</string>
+    <string name="app_subtitle">Belajar Suara untuk Balita</string>
+    <string name="tap_to_listen">Sentuh untuk Mendengar Suara</string>
+    
+    <!-- Kategori -->
+    <string name="category_animal">Hewan</string>
+    <string name="category_vehicle">Kendaraan</string>
+    <string name="category_music">Alat Musik</string>
+
+    <!-- Hewan (10 Item) -->
+    <string name="animal_cat">Kucing</string>
+    <string name="animal_dog">Anjing</string>
+    <string name="animal_cow">Sapi</string>
+    <string name="animal_rooster">Ayam</string>
+    <string name="animal_duck">Bebek</string>
+    <string name="animal_lion">Singa</string>
+    <string name="animal_elephant">Gajah</string>
+    <string name="animal_horse">Kuda</string>
+    <string name="animal_sheep">Domba</string>
+    <string name="animal_bird">Burung</string>
+
+    <!-- Kendaraan (10 Item) -->
+    <string name="vehicle_car">Mobil</string>
+    <string name="vehicle_motorcycle">Motor</string>
+    <string name="vehicle_bus">Bus</string>
+    <string name="vehicle_train">Kereta Api</string>
+    <string name="vehicle_airplane">Pesawat</string>
+    <string name="vehicle_helicopter">Helikopter</string>
+    <string name="vehicle_ship">Kapal Laut</string>
+    <string name="vehicle_bicycle">Sepeda</string>
+    <string name="vehicle_ambulance">Ambulans</string>
+    <string name="vehicle_fire_truck">Pemadam</string>
+
+    <!-- Alat Musik (10 Item) -->
+    <string name="music_guitar">Gitar</string>
+    <string name="music_piano">Piano</string>
+    <string name="music_drum">Drum</string>
+    <string name="music_trumpet">Terompet</string>
+    <string name="music_violin">Biola</string>
+    <string name="music_xylophone">Xylophone</string>
+    <string name="music_flute">Seruling</string>
+    <string name="music_harmonica">Harmonika</string>
+    <string name="music_maracas">Marakas</string>
+    <string name="music_saxophone">Saksofon</string>
+</resources>
+

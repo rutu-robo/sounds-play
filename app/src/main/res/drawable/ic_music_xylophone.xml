@@ -1,0 +1,20 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Colorful Rainbow Bars -->
+    <path android:fillColor="#E53935" android:pathData="M16,24 L24,24 L24,76 L16,76 Z" />
+    <path android:fillColor="#FB8C00" android:pathData="M26,27 L34,27 L34,73 L26,73 Z" />
+    <path android:fillColor="#FDD835" android:pathData="M36,30 L44,30 L44,70 L36,70 Z" />
+    <path android:fillColor="#43A047" android:pathData="M46,33 L54,33 L54,67 L46,67 Z" />
+    <path android:fillColor="#00ACC1" android:pathData="M56,36 L64,36 L64,64 L56,64 Z" />
+    <path android:fillColor="#1E88E5" android:pathData="M66,39 L74,39 L74,61 L66,61 Z" />
+    <path android:fillColor="#8E24AA" android:pathData="M76,42 L84,42 L84,58 L76,58 Z" />
+    <!-- Mallet -->
+    <path android:fillColor="#00000000" android:strokeColor="#795548" android:strokeWidth="2.5"
+          android:pathData="M24,84 L52,50" />
+    <path android:fillColor="#FF5722" android:pathData="M54,52 A4,4 0 1,0 54,44 A4,4 0 1,0 54,52 Z" />
+
+</vector>
